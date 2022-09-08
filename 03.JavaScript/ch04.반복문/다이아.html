@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function evenOdd(){
+            const num = Number(document.getElementById('num').value);
+            const res = document.getElementById('result');
+            for(let i = 0; i < num; i++)  {
+                for(let j = num-1; j > i; j--)  {
+                document.write('&nbsp');
+                }
+                for(let j = 0; j <= i; j++)  {
+                document.write('*');
+                }
+                for(let j = 1; j <= i; j++)  {
+                document.write('*');
+                }
+            
+                document.write('<br>');
+            }
+            
+            for(let i = 0; i < num; i++)  {
+                for(let j =0; j <= i; j++)  {
+                document.write('&nbsp');
+                }
+                for(let j = num-1; j > i; j--)  {
+                document.write('*');
+                }
+                for(let j = num-2; j > i; j--)  {
+                document.write('*');
+                }
+                document.write('<br>');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>문제 1. 다이아몬드 그리기</h3>
+    <input type="text" id="num" placeholder="홀수를 입력하세요.">
+    <button onclick="evenOdd()">다이아몬드 그리기</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>

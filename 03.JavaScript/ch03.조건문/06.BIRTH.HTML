@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Henry</title>
+</head>
+<body>
+  년도 : <input type="text" id="year"/>
+  <input type="button" onclick="javascript:leafYearCheck()" value="button"/><br>
+  결과 : <input type="text" id="result"/>
+</body>
+</html>
+ 
+ 
+<script type="text/javascript">
+function leafYearCheck(){
+  var year = document.getElementById("year").value;
+  
+    var        i;
+    var        int_year;
+ 
+    int_year = Number(year.substr(0, 4));
+    if( int_year%4 == 0 )
+    {
+        if( int_year%100 == 0 )
+        {
+            if( int_year%400 == 0 )
+            {
+                document.getElementById("result").value ="윤년."
+                return; 
+            }
+            document.getElementById("result").value ="평년."
+            return;
+        }
+        document.getElementById("result").value ="윤년."
+        return;        
+    }
+    document.getElementById("result").value ="평년."
+    return;
+}
+</script>
