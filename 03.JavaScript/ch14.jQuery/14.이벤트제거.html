@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 간접 연결</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const handler = function(e){
+                $('<h1></h1>')
+                    .text($(this).text())
+                    .click(handler)
+                    .appendTo('body');
+                $(this).off();
+               
+            }
+            $('h1').on('click', handler);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
